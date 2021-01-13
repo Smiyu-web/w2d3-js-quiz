@@ -68,10 +68,13 @@ isShortsWeather(75) //true
 
 
 function isShortsWeather(temp) {
-    if (temp >= 75) {
-        return true;
-    }
-    return false;
+    return temp >= 75;
+
+
+    // if (temp >= 75) {
+    //     return true;
+    // }
+    // return false;
 }
 
 console.log(isShortsWeather(80));
@@ -93,10 +96,12 @@ lastElement([]) //null
 =========================================================== */
 
 function lastElement(arr) {
-    if (arr.length === 0) {
-        return null;
-    }
-    return arr[arr.length -1];
+    return arr.length === 0 ? null : arr[arr.length -1]
+
+    // if (arr.length === 0) {
+    //     return null;
+    // }
+    // return arr[arr.length -1];
 }
 
 console.log(lastElement([3,5,7]));
@@ -142,11 +147,13 @@ sumArray([50,50,2]) //102
 =========================================================== */
 
 function sumArray(nums) {
-    let total = 0;
-    for (let i = 0; i < nums.length; i++) {
-        total += nums[i];
-    }
-    return total;
+    // let total = 0;
+    // for (let i = 0; i < nums.length; i++) {
+    //     total += nums[i];
+    // }
+    // return total;
+
+    return nums.reduce((total, num) => total + num)
 }
 
 console.log(sumArray([1,2,3]));
@@ -176,12 +183,8 @@ returnDay(8) //null
 =========================================================== */
 
 function returnDay(num) {
-    if (num < 1 || num > 7) {
-        return null
-    }
     let week = {"1":"Monday", "2":"Tuesday", "3":"Wednesday", "4":"Thursday", "5":"Friday", "6":"Saturday", "7":"Sunday"}
-    return week[num];
-
+    return (num < 1 || num > 7) ? null : week[num];
 }
 
 console.log(returnDay(1));
@@ -204,10 +207,12 @@ isSnakeEyes(1,1); //Snake Eyes!
 =========================================================== */
 
 function isSnakeEyes(x, y) {
-    if (x === 1 && y === 1) {
-        return "Snake Eyes!"
-    }
-    return "Not Snake Eyes!"
+    return (x === 1 && y === 1) ? "Snake Eyes!" : "Not Snake Eyes!";
+
+    // if (x === 1 && y === 1) {
+    //     return "Snake Eyes!"
+    // }
+    // return "Not Snake Eyes!"
 }
 
 console.log(isSnakeEyes(1,5));
@@ -260,6 +265,7 @@ isPangram('five boxing wizards jump quickly at it'); //false
 
 function isPangram(s) {
     const alpha = "abcdefghijklmnopqrstuvwxyz";
+
     let regex = /\s/g;
     let newString = s.replace(regex, "");
    
@@ -290,13 +296,16 @@ in that array.
 =========================================================== */
 
 function evens(arr) {
-    let newArr = [];
-    for (let num of arr ) {
-        if (num % 2 === 0) {
-            newArr.push(num);
-        }
-    }
-    return newArr;
+    // let newArr = [];
+    // for (let num of arr) {
+    //     if (num % 2 === 0) {
+    //         newArr.push(num);
+    //     }
+    // }
+    // return newArr;
+
+    return arr.filter(num => num % 2 === 0);
+
 }
 
 console.log(evens([1, 2, 3, 4, 5, 6, 7, 8]));
