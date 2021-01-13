@@ -204,7 +204,7 @@ isSnakeEyes(1,1); //Snake Eyes!
 =========================================================== */
 
 function isSnakeEyes(x, y) {
-    if (x === 1 & y === 1) {
+    if (x === 1 && y === 1) {
         return "Snake Eyes!"
     }
     return "Not Snake Eyes!"
